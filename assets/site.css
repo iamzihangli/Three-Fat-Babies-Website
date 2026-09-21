@@ -110,6 +110,26 @@ section{padding:clamp(60px,9vw,118px) 0}
 .commission h3{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:300;font-style:italic}
 .commission p{margin:12px auto 0;max-width:52ch;color:var(--muted);font-weight:300}
 
+/* ---------- membership ---------- */
+.price{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,28px);margin-top:clamp(30px,5vw,56px)}
+.price-card{border:1px solid var(--line);padding:clamp(26px,4vw,44px);background:var(--cream)}
+.price-card.launch{background:var(--espresso);color:#EDE2D2;border-color:var(--espresso)}
+.price-card .lbl{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--caramel);font-weight:600}
+.price-card.launch .lbl{color:#E6BE8A}
+.price-card .amt{font-family:'Fraunces',Georgia,serif;font-size:clamp(2.8rem,7vw,4.4rem);font-weight:300;line-height:1;margin:14px 0 6px;letter-spacing:-.03em}
+.price-card .amt small{font-size:.32em;letter-spacing:.04em;color:var(--muted);font-family:'Karla',sans-serif;margin-left:6px}
+.price-card.launch .amt small{color:rgba(237,226,210,.6)}
+.price-card p{margin:10px 0 0;font-size:.95rem;font-weight:300;color:var(--muted)}
+.price-card.launch p{color:rgba(237,226,210,.72)}
+.terms{margin-top:clamp(36px,5vw,60px);border-top:1px solid var(--line);padding-top:30px}
+.terms h3{font-size:1.4rem;font-weight:400;font-style:italic;margin-bottom:14px}
+.terms ul{margin:0;padding-left:1.1em;color:var(--muted);font-weight:300;font-size:.96rem}
+.terms li+li{margin-top:8px}
+.qa{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(22px,3vw,44px)}
+.qa h4{font-size:1.24rem;font-weight:400;margin-bottom:8px}
+.qa p{margin:0;font-size:.95rem;color:var(--muted);font-weight:300}
+@media(max-width:700px){.price{grid-template-columns:1fr}}
+
 /* ---------- manifesto ---------- */
 .manifesto{background:var(--paper);padding:clamp(40px,7vw,86px) 0}
 .manifesto p{font-family:'Fraunces',Georgia,serif;font-weight:300;font-size:clamp(1.18rem,2.7vw,1.7rem);line-height:1.55;color:var(--espresso);margin:0}

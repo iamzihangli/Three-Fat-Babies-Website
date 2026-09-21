@@ -123,7 +123,8 @@ table. Never imply the product is only for pets who have died.
 - ❌ Never say: *hand-sculpted*, *sculpted*, *carved*, *wood*, *wooden*, *resin*, or any other
   claim about what the piece is made of. We do not state the material.
   (Describing a *table* in a photo as wooden is fine — that is the furniture, not the product.)
-- ❌ Never invent prices, dimensions, weights, turnaround times or shipping terms.
+- ❌ Never invent prices, dimensions, weights, turnaround times or shipping terms. The only
+  prices that exist are the membership prices in the Lifetime Membership section below.
 
 **Selling points:** customised to your own pet, from your photos · painted by hand, one at a
 time · their name across the top of the frame · three-dimensional — the paws come out over the
@@ -143,6 +144,35 @@ site ("In memory · January 2026") and do not dramatise it.
 | **Peggy** *(memorial — she passed away in January 2026)* | Black-and-white tuxedo cat, green eyes, paws over the frame edge | `assets/peggy-table.jpg` (front, on a table), `assets/peggy-angle.jpg` (three-quarter, lamplight), `assets/peggy-porch.jpg` (porch bench, lantern + daisies), `assets/peggy-wall.jpg` (mounted on an ivy wall), `assets/peggy-railing.jpg` (deck railing, garden behind) |
 | **Perdita** | Black Great Dane with a white chest and a “Birthday Pup” bandana | `assets/perdita-wall.jpg` (mounted on grey boards under a lantern), `assets/perdita-deck.jpg` (on a deck, woods behind), `assets/perdita-table.jpg` (indoors, sunlight and a houseplant) |
 | **Pongo** | Harlequin Great Dane, grey and black patches, red collar | `assets/pongo-table.jpg` (indoors on wood), `assets/pongo-railing.jpg` (deck railing, hydrangeas), `assets/pongo-wall.jpg` (mounted on blue-grey siding with ivy) |
+
+## Why we started — lives on the Babies page (`babies/#why`)
+
+Owner's account, first person ("Sharon and I"). Keep the facts exactly; polish only the prose.
+
+- They found a bump on Pei, and noticed more and more black dots on Moo's face and body.
+- They did not remember the dogs having these. A little research: signs of aging.
+- In 2026, friends of theirs lost their family pet.
+- That made them ask what they could do to keep their pets with them.
+- The hope: what we make gives you the feeling that the ones you love are always there.
+
+## Lifetime Membership — `membership/`  (NOT LAUNCHED YET)
+
+**Decided by the owner — these are the only facts that may appear on the site:**
+
+| | |
+|---|---|
+| Price | **$299, paid once.** Not a subscription; never renews. Avoid the word "subscribe". |
+| Launch offer | **50% off ($149.50) for one month** from launch day |
+| Launch date | **Not set.** Site says "launching soon — email us to hear first" |
+| Includes | One frame-style portrait, customised and hand-painted |
+| Warranty | **Lifetime.** If the piece is broken or damaged we repair or replace it. **Member pays shipping both ways.** |
+| Future products | Members get a discount on new products (e.g. Christmas tree decorations). **No percentage stated yet.** |
+| How to buy | Email first. No checkout link. |
+
+**Tone:** the launch price is stated plainly, once per block. No countdown timers, no "hurry",
+no "limited time", no "don't miss". Many buyers are grieving; see the memorial tone rules above.
+
+Thinking, risks and open questions are in `../business plan.md` (private, outside this repo).
 
 ## Contact
 

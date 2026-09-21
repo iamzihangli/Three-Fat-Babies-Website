@@ -9,7 +9,8 @@ frames, made in memory and for the pets still here.
 |---|---|
 | `index.html` | Home — opening line, then the portrait frames, then why we make them |
 | `portraits/` | All three commissions, all eleven photographs |
-| `babies/` | Pei, Moo and Cata |
+| `membership/` | Lifetime membership — $299 once, launch month half price (not launched yet) |
+| `babies/` | Pei, Moo and Cata, and why we started |
 | `contact/` | Email, Instagram, and how to commission a portrait |
 | `assets/` | Shared images + `site.css`, the one stylesheet every page uses |
 | `CONTENT.md` | **Single source of truth** for copy, product facts and tone rules |
