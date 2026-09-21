@@ -3,31 +3,175 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Three Fat Babies</title>
+<title>Three Fat Babies — Pick a Design</title>
+<meta name="description" content="Five design directions for the new Three Fat Babies website. Open each one, then pick a favourite.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#fffaf3; --fg:#3d3230; --muted:#8a7a72; --accent:#e08a5f; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#1e1a19; --fg:#f2e9e2; --muted:#a2928a; --accent:#f0a077; }
+:root{
+  --bg:#F7F5F1; --card:#fff; --ink:#22201D; --muted:#726B62; --line:rgba(34,32,29,.13);
+  --accent:#5EAFD8;
+  --sh:0 1px 2px rgba(34,32,29,.05),0 12px 34px -16px rgba(34,32,29,.26);
+  --sh-lg:0 2px 4px rgba(34,32,29,.06),0 34px 70px -26px rgba(34,32,29,.4);
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme:dark){
+    --bg:#161513; --card:#201E1B; --ink:#F2EEE8; --muted:#A49B8F; --line:rgba(242,238,232,.14);
+    --sh:0 1px 2px rgba(0,0,0,.4),0 12px 34px -16px rgba(0,0,0,.7);
+    --sh-lg:0 2px 4px rgba(0,0,0,.4),0 34px 70px -26px rgba(0,0,0,.8);
   }
-  * { box-sizing: border-box; }
-  body {
-    margin:0; min-height:100vh; display:grid; place-items:center;
-    padding:16px; background:var(--bg); color:var(--fg);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    text-align:center; line-height:1.6;
-  }
-  h1 { font-size:clamp(2rem,7vw,3.5rem); margin:0 0 .25em; letter-spacing:-.02em; }
-  .paws { font-size:clamp(2rem,9vw,3rem); margin-bottom:.4em; }
-  p { color:var(--muted); max-width:34ch; margin:0 auto .5em; }
-  .accent { color:var(--accent); font-weight:600; }
+}
+:root[data-theme="dark"]{
+  --bg:#161513; --card:#201E1B; --ink:#F2EEE8; --muted:#A49B8F; --line:rgba(242,238,232,.14);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Outfit',ui-sans-serif,system-ui,sans-serif;font-size:17px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:300;line-height:1.1;margin:0;letter-spacing:-.02em}
+
+header{padding:clamp(48px,8vw,104px) 0 clamp(30px,4vw,54px);text-align:center}
+header img.logo{width:clamp(96px,17vw,150px);margin:0 auto clamp(20px,3vw,30px)}
+h1{font-size:clamp(2.1rem,6.2vw,4rem)}
+h1 em{font-style:italic;font-weight:600;color:var(--accent)}
+header p{max-width:60ch;margin:22px auto 0;color:var(--muted);font-size:1.05rem;font-weight:300}
+.note{
+  margin:30px auto 0;max-width:64ch;border:1px solid var(--line);border-radius:14px;
+  padding:16px 22px;font-size:.94rem;color:var(--muted);background:var(--card);text-align:left;
+}
+.note b{color:var(--ink);font-weight:600}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:clamp(20px,2.6vw,32px);padding-bottom:clamp(50px,8vw,100px)}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  box-shadow:var(--sh);display:flex;flex-direction:column;text-decoration:none;
+  transition:transform .55s var(--ease),box-shadow .55s var(--ease);
+}
+.card:hover,.card:focus-visible{transform:translateY(-7px);box-shadow:var(--sh-lg)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:#ddd}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.card:hover .thumb img{transform:scale(1.045)}
+.tag{
+  position:absolute;top:13px;left:13px;background:rgba(0,0,0,.62);backdrop-filter:blur(6px);
+  color:#fff;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+  padding:5px 11px;border-radius:99px;
+}
+.body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.body h2{font-size:1.72rem}
+.body h2 em{font-style:italic;font-weight:600}
+.body .desc{margin:11px 0 0;color:var(--muted);font-size:.96rem;font-weight:300;flex:1}
+.swatches{display:flex;gap:7px;margin-top:18px}
+.sw{width:23px;height:23px;border-radius:7px;border:1px solid var(--line)}
+.meta{margin-top:16px;padding-top:15px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:12px}
+.type{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
+.open{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--accent);white-space:nowrap}
+.card:hover .open::after{margin-left:8px}
+.open::after{content:"→";margin-left:5px;display:inline-block;transition:margin .5s var(--ease)}
+
+footer{border-top:1px solid var(--line);padding:34px 0 60px;text-align:center;color:var(--muted);font-size:.88rem}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-  <main>
-    <div class="paws">🐾 🐾 🐾</div>
-    <h1>Three Fat Babies</h1>
-    <p>Something new is being built here.</p>
-    <p class="accent">Stay pawsome and come back soon!</p>
-  </main>
+
+<header class="wrap">
+  <img class="logo" src="assets/logo.png" alt="Three Fat Babies logo">
+  <h1>Five ways to build<br><em>Three Fat Babies</em></h1>
+  <p>Same content, same photos, five different design directions. Open each one, scroll all the way
+  down, then tell me which you want to keep — I’ll build it out properly and throw the rest away.</p>
+  <div class="note">
+    <b>All five are complete and identical in content.</b> Each has the welcome text, the full bios for
+    Pei, Moo and Cata, Meet Our Humans with Dad’s portfolio, the “Moo Moo Cow” secret word, contact
+    details, and the new <b>custom pet portrait frames</b> with all eleven photos of Peggy, Perdita and
+    Pongo. The retired Café Crust magnets are not shown anywhere — they’re preserved in
+    <code>../archive/</code>.
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+
+    <a class="card" href="versions/v1-storybook/index.html">
+      <div class="thumb"><span class="tag">Version 1</span>
+        <img src="assets/peggy-porch.jpg" alt="Peggy's portrait frame on a sunny porch bench beside a lantern and daisies"></div>
+      <div class="body">
+        <h2>Storybook</h2>
+        <p class="desc">Warm, bouncy and children’s-book friendly. Thick outlines, chunky drop shadows,
+        speech-bubble bios and a logo that gently bobs. The closest in spirit to the old site, just
+        much better made.</p>
+        <div class="swatches"><span class="sw" style="background:#FFFBF3"></span><span class="sw" style="background:#8FCBEA"></span><span class="sw" style="background:#F2A9C8"></span><span class="sw" style="background:#F3CE8E"></span><span class="sw" style="background:#4A3728"></span></div>
+        <div class="meta"><span class="type">Baloo 2 · Nunito</span><span class="open">Open</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="versions/v2-atelier/index.html">
+      <div class="thumb"><span class="tag">Version 2</span>
+        <img src="assets/pongo-table.jpg" alt="Pongo's portrait frame indoors on a wooden surface beside a houseplant"></div>
+      <div class="body">
+        <h2>Atelier</h2>
+        <p class="desc">The grown-up, boutique option. Espresso and cream, italic serif headlines, a film-grain
+        overlay, and the portraits laid out like a catalogue of commissioned works. Sells the craft.</p>
+        <div class="swatches"><span class="sw" style="background:#FAF5EC"></span><span class="sw" style="background:#F3EADC"></span><span class="sw" style="background:#B0793D"></span><span class="sw" style="background:#8A5B29"></span><span class="sw" style="background:#241810"></span></div>
+        <div class="meta"><span class="type">Fraunces · Karla</span><span class="open">Open</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="versions/v3-scrapbook/index.html">
+      <div class="thumb"><span class="tag">Version 3</span>
+        <img src="assets/perdita-deck.jpg" alt="Perdita's portrait frame standing on a deck with woods behind it"></div>
+      <div class="body">
+        <h2>Scrapbook</h2>
+        <p class="desc">A family photo album pinned to a corkboard. Tilted polaroids, washi tape, handwritten
+        captions and grid paper. The most personal and the most fun; the least corporate.</p>
+        <div class="swatches"><span class="sw" style="background:#F6EFE2"></span><span class="sw" style="background:#7FC3E6"></span><span class="sw" style="background:#F0A0C2"></span><span class="sw" style="background:#F4C96B"></span><span class="sw" style="background:#40342A"></span></div>
+        <div class="meta"><span class="type">Caveat · Quicksand</span><span class="open">Open</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="versions/v4-gallery/index.html">
+      <div class="thumb"><span class="tag">Version 4</span>
+        <img src="assets/peggy-wall.jpg" alt="Peggy's portrait frame mounted on a cream wall surrounded by ivy"></div>
+      <div class="body">
+        <h2>Gallery</h2>
+        <p class="desc">Museum treatment. Enormous whitespace, quiet type, almost no colour, and the
+        photographs hung like artworks with little caption plates. Makes the frames feel expensive.</p>
+        <div class="swatches"><span class="sw" style="background:#FBFAF7"></span><span class="sw" style="background:#E8E4DC"></span><span class="sw" style="background:#8FCBEA"></span><span class="sw" style="background:#4A3728"></span><span class="sw" style="background:#1A1917"></span></div>
+        <div class="meta"><span class="type">Serif display · grotesk</span><span class="open">Open</span></div>
+      </div>
+    </a>
+
+    <a class="card" href="versions/v5-bento/index.html">
+      <div class="thumb"><span class="tag">Version 5</span>
+        <img src="assets/pongo-railing.jpg" alt="Pongo's portrait frame on a deck railing with hydrangeas blooming behind"></div>
+      <div class="body">
+        <h2>Bento</h2>
+        <p class="desc">The modern app-like one. Soft pastel tiles of different sizes packed into a bento
+        grid, diffused shadows and springy hovers. Cute, but current rather than cutesy.</p>
+        <div class="swatches"><span class="sw" style="background:#FFFBF3"></span><span class="sw" style="background:#8FCBEA"></span><span class="sw" style="background:#F2A9C8"></span><span class="sw" style="background:#F3CE8E"></span><span class="sw" style="background:#4A3728"></span></div>
+        <div class="meta"><span class="type">Rounded display · sans</span><span class="open">Open</span></div>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>Three Fat Babies — Pei, Moo &amp; Cata ·
+  <a href="mailto:threefatbabies.official@gmail.com">threefatbabies.official@gmail.com</a></p>
+</footer>
+
 </body>
 </html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three Fat Babies — Gallery</title>
+<meta name="description" content="Three Fat Babies: hand-sculpted, hand-painted custom 3D pet portrait frames, made to order from your own photos. Commissioned works, the tales of Pei, Moo and Cata, and the humans behind them.">
+<link rel="icon" href="../../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ---------------------------------------------------------------
+   Three Fat Babies — "The Gallery"
+   Palette: warm paper, near-black ink, one muted sky accent.
+   --------------------------------------------------------------- */
+
+:root{
+  --paper:#FBFAF7;
+  --paper-2:#F3F0E9;
+  --ink:#15120F;
+  --ink-soft:#5F574C;
+  --line:#DCD5C8;
+  --line-soft:#E8E3D9;
+  --accent:#3F6D7E;          /* muted sky #8FCBEA, taken down */
+  --accent-quiet:#E7EEF1;
+  --shadow:0 24px 60px -40px rgba(21,18,15,.55);
+
+  --gutter:clamp(16px, 5vw, 72px);
+  --maxw:1280px;
+  --pad-y:clamp(72px, 11vw, 148px);
+
+  --serif:"Bodoni Moda", "Times New Roman", serif;
+  --sans:"Manrope", system-ui, sans-serif;
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#100F0D;
+    --paper-2:#1A1815;
+    --ink:#F0EBE2;
+    --ink-soft:#9C9489;
+    --line:#2E2A25;
+    --line-soft:#242118;
+    --accent:#9DC4D7;
+    --accent-quiet:#1A2329;
+    --shadow:0 24px 60px -40px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#100F0D;
+  --paper-2:#1A1815;
+  --ink:#F0EBE2;
+  --ink-soft:#9C9489;
+  --line:#2E2A25;
+  --line-soft:#242118;
+  --accent:#9DC4D7;
+  --accent-quiet:#1A2329;
+  --shadow:0 24px 60px -40px rgba(0,0,0,.9);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:96px;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:clamp(15px,.55vw + 14px,17px);
+  line-height:1.72;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  font-synthesis-weight:none;
+}
+
+img{max-width:100%;display:block}
+
+a{color:inherit}
+
+:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+  border-radius:2px;
+}
+
+.wrap{
+  width:100%;
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+.skip{
+  position:absolute;
+  left:-9999px;
+  top:0;
+  background:var(--ink);
+  color:var(--paper);
+  padding:12px 18px;
+  z-index:100;
+  font-size:.8rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.skip:focus{left:8px;top:8px}
+
+/* ---------- type ---------- */
+
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-optical-sizing:auto;
+  line-height:1.02;
+  letter-spacing:-.015em;
+  margin:0;
+  text-wrap:balance;
+}
+
+.eyebrow{
+  font-family:var(--sans);
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:0 0 clamp(20px,3vw,38px);
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.eyebrow::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--line);
+}
+
+.lede{
+  font-family:var(--serif);
+  font-size:clamp(1.3rem,2.4vw,1.9rem);
+  line-height:1.38;
+  letter-spacing:-.01em;
+}
+
+p{margin:0 0 1.15em}
+p:last-child{margin-bottom:0}
+
+.ink-soft{color:var(--ink-soft)}
+
+/* quiet underlined link */
+.link{
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  padding-bottom:2px;
+  transition:border-color .4s var(--ease), color .4s var(--ease);
+}
+.link:hover{border-color:var(--accent);color:var(--accent)}
+
+.link-arrow{
+  display:inline-flex;
+  align-items:center;
+  gap:.6em;
+  text-decoration:none;
+  font-size:.74rem;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--ink);
+  transition:border-color .45s var(--ease), color .45s var(--ease), gap .45s var(--ease);
+}
+.link-arrow span[aria-hidden]{transition:transform .45s var(--ease)}
+.link-arrow:hover{color:var(--accent);border-color:var(--accent)}
+.link-arrow:hover span[aria-hidden]{transform:translateX(5px)}
+
+/* ---------- header ---------- */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:saturate(120%) blur(10px);
+  border-bottom:1px solid transparent;
+  transition:border-color .5s var(--ease);
+}
+.site-header.is-stuck{border-bottom-color:var(--line)}
+
+.bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  min-height:72px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  min-width:0;
+}
+.brand img{width:34px;height:34px;object-fit:contain;flex:none}
+.brand-name{
+  font-family:var(--serif);
+  font-size:1.02rem;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+.brand-name em{font-style:italic}
+
+.nav{display:flex;align-items:center;gap:clamp(18px,2.4vw,36px)}
+.nav a{
+  text-decoration:none;
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  padding:6px 0;
+  border-bottom:1px solid transparent;
+  transition:color .4s var(--ease), border-color .4s var(--ease);
+}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+
+.burger{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  border-radius:0;
+  width:44px;
+  height:40px;
+  padding:0;
+  cursor:pointer;
+  color:inherit;
+  align-items:center;
+  justify-content:center;
+}
+.burger i{
+  display:block;
+  position:relative;
+  width:18px;
+  height:1px;
+  background:var(--ink);
+  transition:background .3s var(--ease);
+}
+.burger i::before,.burger i::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:1px;
+  background:var(--ink);
+  transition:transform .45s var(--ease);
+}
+.burger i::before{top:-6px}
+.burger i::after{top:6px}
+.burger[aria-expanded="true"] i{background:transparent}
+.burger[aria-expanded="true"] i::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] i::after{transform:translateY(-6px) rotate(-45deg)}
+
+.mobile-nav{
+  display:none;
+  border-top:1px solid var(--line);
+  background:var(--paper);
+}
+.mobile-nav.is-open{display:block}
+.mobile-nav ul{list-style:none;margin:0;padding:8px 0 26px}
+.mobile-nav li{border-bottom:1px solid var(--line-soft)}
+.mobile-nav a{
+  display:block;
+  padding:16px 0;
+  text-decoration:none;
+  font-family:var(--serif);
+  font-size:1.5rem;
+}
+
+@media (max-width:860px){
+  .nav{display:none}
+  .burger{display:flex}
+}
+
+/* ---------- hero ---------- */
+
+.hero{
+  padding-top:clamp(48px,9vw,110px);
+  padding-bottom:var(--pad-y);
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(28px,4vw,56px);
+  align-items:end;
+}
+.hero-title{grid-column:1/9}
+.hero-title h1{
+  font-size:clamp(2.6rem,8.2vw,6.6rem);
+  line-height:.96;
+}
+.hero-title h1 em{
+  font-style:italic;
+  color:var(--accent);
+}
+.hero-side{grid-column:9/13;padding-bottom:10px}
+.hero-side p{color:var(--ink-soft);margin-bottom:26px}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+
+.hero-figure{margin:clamp(44px,7vw,92px) 0 0}
+.hero-figure .frame{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(20px,3vw,40px);
+  align-items:end;
+}
+.hero-figure .frame > figure:first-child{grid-column:1/8}
+.hero-figure .frame > figure:last-child{grid-column:9/13;padding-bottom:clamp(20px,5vw,72px)}
+
+/* ---------- figures & caption plates ---------- */
+
+figure{margin:0}
+
+.art img{
+  width:100%;
+  height:auto;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  background:var(--paper-2);
+  filter:saturate(.96);
+  transition:filter .7s var(--ease), transform .9s var(--ease);
+}
+.art:hover img{filter:saturate(1.04)}
+
+figcaption{
+  margin-top:14px;
+  padding-top:11px;
+  border-top:1px solid var(--line);
+  font-size:.74rem;
+  line-height:1.6;
+  color:var(--ink-soft);
+  letter-spacing:.015em;
+  max-width:44ch;
+}
+figcaption b{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:500;
+  font-size:.95rem;
+  color:var(--ink);
+  letter-spacing:.01em;
+}
+
+/* ---------- the notice (easter egg) ---------- */
+
+.notice{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:clamp(20px,3vw,30px) 0;
+}
+.notice-inner{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(14px,3vw,40px);
+  align-items:baseline;
+}
+.notice-label{
+  grid-column:1/4;
+  font-size:.64rem;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.notice-text{
+  grid-column:4/13;
+  font-size:.86rem;
+  color:var(--ink-soft);
+  margin:0;
+}
+.notice-text em{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.05rem;
+  color:var(--ink);
+}
+
+/* ---------- generic section ---------- */
+
+section{padding-block:var(--pad-y)}
+.rule-top{border-top:1px solid var(--line)}
+
+.two-col{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(24px,4vw,56px);
+}
+
+/* about */
+.about-lede{grid-column:1/7}
+.about-body{grid-column:8/13;align-self:end;color:var(--ink-soft)}
+
+/* ---------- works (the product) ---------- */
+
+.works-intro{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(24px,4vw,56px);
+  margin-bottom:clamp(48px,7vw,96px);
+}
+.works-intro h2{
+  grid-column:1/8;
+  font-size:clamp(2.1rem,5.6vw,4.4rem);
+}
+.works-intro .works-note{grid-column:8/13;align-self:end;color:var(--ink-soft)}
+
+.spec{
+  list-style:none;
+  margin:clamp(40px,6vw,72px) 0 0;
+  padding:0;
+  border-top:1px solid var(--line);
+  columns:2;
+  column-gap:clamp(28px,5vw,80px);
+}
+.spec li{
+  break-inside:avoid;
+  padding:15px 0;
+  border-bottom:1px solid var(--line-soft);
+  font-size:.86rem;
+  display:flex;
+  gap:14px;
+  align-items:baseline;
+}
+.spec li span{
+  font-family:var(--serif);
+  font-size:.78rem;
+  color:var(--accent);
+  letter-spacing:.06em;
+  flex:none;
+  min-width:1.6em;
+}
+
+.work{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(28px,4vw,48px);
+  padding-block:clamp(60px,9vw,120px);
+  border-top:1px solid var(--line);
+}
+.work-head{
+  grid-column:1/4;
+  position:sticky;
+  top:110px;
+  align-self:start;
+}
+.work-num{
+  font-size:.66rem;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  display:block;
+  margin-bottom:18px;
+}
+.work-head h3{
+  font-size:clamp(2.2rem,4.4vw,3.4rem);
+  margin-bottom:18px;
+}
+.work-head p{font-size:.88rem;color:var(--ink-soft)}
+
+.plates{
+  grid-column:5/13;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:clamp(34px,5vw,72px) clamp(20px,2.6vw,34px);
+  align-items:start;
+}
+.plates-5 > figure:nth-child(1){grid-column:1/5}
+.plates-5 > figure:nth-child(2){grid-column:5/7;margin-top:clamp(30px,7vw,110px)}
+.plates-5 > figure:nth-child(3){grid-column:2/4}
+.plates-5 > figure:nth-child(4){grid-column:4/7;margin-top:clamp(20px,4vw,56px)}
+.plates-5 > figure:nth-child(5){grid-column:1/4}
+
+.plates-3 > figure:nth-child(1){grid-column:1/5}
+.plates-3 > figure:nth-child(2){grid-column:5/7;margin-top:clamp(30px,7vw,110px)}
+.plates-3 > figure:nth-child(3){grid-column:2/5}
+
+.work-flip .work-head{grid-column:10/13}
+.work-flip .plates{grid-column:1/9;grid-row:1}
+.work-flip .plates-3 > figure:nth-child(1){grid-column:3/7}
+.work-flip .plates-3 > figure:nth-child(2){grid-column:1/3;margin-top:clamp(30px,7vw,110px)}
+.work-flip .plates-3 > figure:nth-child(3){grid-column:3/6}
+
+.order{
+  border-top:1px solid var(--line);
+  padding-top:clamp(36px,5vw,60px);
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(24px,4vw,56px);
+}
+.order h3{grid-column:1/6;font-size:clamp(1.7rem,3.4vw,2.6rem)}
+.order .order-body{grid-column:7/13}
+.order .order-body p{color:var(--ink-soft)}
+
+/* ---------- tales ---------- */
+
+.tale{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(26px,4vw,64px);
+  padding-block:clamp(52px,8vw,104px);
+  border-top:1px solid var(--line);
+  align-items:start;
+}
+.tale figure{grid-column:1/5}
+.tale .tale-body{grid-column:6/12}
+.tale-alt figure{grid-column:9/13;grid-row:1}
+.tale-alt .tale-body{grid-column:2/8;grid-row:1}
+
+.tale-body h3{
+  font-size:clamp(2.3rem,5vw,3.6rem);
+  margin-bottom:14px;
+}
+.tale-meta{
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 26px;
+}
+.tale-body p{color:var(--ink-soft)}
+.tale-body p:first-of-type{color:var(--ink)}
+
+/* ---------- humans ---------- */
+
+.humans-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(28px,4vw,64px);
+  align-items:start;
+}
+.humans-grid > figure{grid-column:1/7}
+.humans-text{grid-column:8/13}
+.human + .human{margin-top:clamp(28px,4vw,46px)}
+.human h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:6px}
+.human .role{
+  font-size:.66rem;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:0 0 16px;
+}
+.human p{color:var(--ink-soft);font-size:.94rem}
+
+.sheets{
+  margin-top:clamp(52px,7vw,96px);
+  border-top:1px solid var(--line);
+  padding-top:clamp(28px,4vw,48px);
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(22px,3vw,40px);
+}
+.sheets .sheets-label{grid-column:1/4}
+.sheets figure:nth-of-type(1){grid-column:5/8}
+.sheets figure:nth-of-type(2){grid-column:9/12}
+.sheets a{display:block;text-decoration:none}
+.sheets a img{transition:opacity .5s var(--ease)}
+.sheets a:hover img{opacity:.86}
+
+/* ---------- contact ---------- */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:clamp(24px,4vw,56px);
+  align-items:end;
+}
+.contact-grid .contact-main{grid-column:1/9}
+.contact-grid .contact-side{grid-column:10/13;color:var(--ink-soft);font-size:.86rem}
+.mail{
+  font-family:var(--serif);
+  font-size:clamp(1.35rem,4.2vw,3.1rem);
+  line-height:1.12;
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  padding-bottom:.12em;
+  display:inline-block;
+  max-width:100%;
+  overflow-wrap:anywhere;
+  transition:border-color .5s var(--ease), color .5s var(--ease);
+}
+.mail:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- footer ---------- */
+
+.site-footer{
+  border-top:1px solid var(--line);
+  padding-block:clamp(40px,6vw,72px);
+}
+.foot{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px 40px;
+  align-items:center;
+  justify-content:space-between;
+  font-size:.74rem;
+  letter-spacing:.06em;
+  color:var(--ink-soft);
+}
+.foot img{width:40px;height:40px;object-fit:contain;opacity:.9}
+.foot nav{display:flex;flex-wrap:wrap;gap:20px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ink)}
+
+/* ---------- reveal ---------- */
+
+.rise{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 1.05s var(--ease), transform 1.05s var(--ease);
+  transition-delay:var(--d,0ms);
+}
+.rise.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+
+@media (max-width:1024px){
+  .work-head{position:static}
+  .hero-title{grid-column:1/10}
+  .hero-side{grid-column:1/9}
+  .plates{grid-column:4/13}
+  .work-head{grid-column:1/4}
+  .work-flip .plates{grid-column:1/10}
+}
+
+@media (max-width:768px){
+  html{scroll-padding-top:80px}
+  .hero{min-height:auto;padding-top:40px}
+  .hero-grid,
+  .hero-figure .frame,
+  .two-col,
+  .works-intro,
+  .work,
+  .plates,
+  .tale,
+  .humans-grid,
+  .sheets,
+  .order,
+  .contact-grid,
+  .notice-inner{
+    grid-template-columns:1fr;
+  }
+  .hero-title,.hero-side,
+  .hero-figure .frame > figure:first-child,
+  .hero-figure .frame > figure:last-child,
+  .about-lede,.about-body,
+  .works-intro h2,.works-intro .works-note,
+  .work-head,.plates,
+  .plates-5 > figure,.plates-3 > figure,
+  .work-flip .work-head,.work-flip .plates,
+  .work-flip .plates-3 > figure,
+  .tale figure,.tale .tale-body,
+  .tale-alt figure,.tale-alt .tale-body,
+  .humans-grid > figure,.humans-text,
+  .sheets .sheets-label,.sheets figure,
+  .order h3,.order .order-body,
+  .contact-grid .contact-main,.contact-grid .contact-side,
+  .notice-label,.notice-text{
+    grid-column:1 / -1 !important;
+    grid-row:auto !important;
+    margin-top:0 !important;
+  }
+  .hero-figure .frame > figure:last-child{padding-bottom:0}
+  .plates{gap:clamp(30px,8vw,48px)}
+  .tale-alt figure,.tale figure{max-width:78%}
+  .humans-grid > figure{max-width:88%}
+  .sheets figure{max-width:60%}
+  .spec{columns:1}
+  .notice-label{margin-bottom:10px}
+  figcaption{max-width:none}
+}
+
+@media (max-width:420px){
+  .tale figure,.tale-alt figure,.humans-grid > figure{max-width:100%}
+  .sheets figure{max-width:78%}
+  .brand-name{font-size:.92rem}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    transition-delay:0ms !important;
+  }
+  .rise{opacity:1;transform:none}
+  .art:hover img,.link-arrow:hover span[aria-hidden]{transform:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#top">
+        <img src="../../assets/logo.png" alt="Three Fat Babies logo: two cow-spotted dogs and a cat" width="34" height="34">
+        <span class="brand-name">Three <em>Fat</em> Babies</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#works">Works</a>
+        <a href="#tales">Tales</a>
+        <a href="#humans">Humans</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+        <i aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <div class="wrap">
+      <ul>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#tales">Tales</a></li>
+        <li><a href="#humans">Humans</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-title rise">
+          <h1 id="hero-title">Welcome to Three Fat Babies <em>Wonderland</em></h1>
+        </div>
+        <div class="hero-side rise" style="--d:140ms">
+          <p>Please come visit our social media page! Drop us a like, leave a comment, or share something fun with us! Can’t wait to hear from you! Purrs and head boops!</p>
+          <div class="hero-actions">
+            <a class="link-arrow" href="#works">View the works <span aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="https://www.instagram.com/three_fat_babies?igsh=MTF0MXd1N2U2MjNmYw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-figure">
+        <div class="frame">
+          <figure class="art rise" style="--d:200ms">
+            <img src="../../assets/peggy-porch.jpg" alt="A hand-painted 3D portrait frame of Peggy, a black-and-white tuxedo cat, standing on a porch bench beside a lantern and a jug of daisies" width="960" height="1200" fetchpriority="high">
+            <figcaption><b>Peggy</b> — commissioned portrait, hand-sculpted and hand-painted. Porch bench, lantern and daisies.</figcaption>
+          </figure>
+          <figure class="art rise" style="--d:320ms">
+            <img src="../../assets/pongo-railing.jpg" alt="A hand-painted 3D portrait frame of Pongo, a harlequin Great Dane in a red collar, resting on a deck railing with hydrangeas behind" width="960" height="1200" loading="lazy">
+            <figcaption><b>Pongo</b> — commissioned portrait, hand-sculpted and hand-painted. Deck railing, hydrangeas.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOTICE / EASTER EGG ============ -->
+  <div class="notice">
+    <div class="wrap">
+      <div class="notice-inner">
+        <p class="notice-label">Notice to visitors</p>
+        <p class="notice-text">Congratulations! If you see this, send the secret word <em>“Moo Moo Cow”</em> to <a class="link" href="mailto:threefatbabies.official@gmail.com?subject=Moo%20Moo%20Cow">threefatbabies.official@gmail.com</a> to get 2 free handmade items. :)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <p class="eyebrow">About the house</p>
+      <div class="two-col">
+        <div class="about-lede rise">
+          <h2 id="about-title" class="lede" style="font-size:clamp(1.45rem,3.1vw,2.5rem)">Hello, friends! You’ve stumbled upon the official headquarters of us—<em>Three Fat Babies</em>.</h2>
+        </div>
+        <div class="about-body rise" style="--d:120ms">
+          <p>This is where you can dive into our adventures, discover our exclusive products, and get a sneak peek at the fun of our fabulous lives. Oh, and let’s not forget a little something about our loyal fur-baby managers—they keep our world running smoothly.</p>
+          <p>Thanks for visiting, supporting, and maybe even shopping. Stay pawsome and come back soon!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORKS / PRODUCT ============ -->
+  <section id="works" class="rule-top" aria-labelledby="works-title">
+    <div class="wrap">
+      <p class="eyebrow">Current exhibition — commissions</p>
+
+      <div class="works-intro">
+        <h2 id="works-title" class="rise">Custom 3D Pet&nbsp;Portrait Frames</h2>
+        <div class="works-note rise" style="--d:120ms">
+          <p>Hand-sculpted, hand-painted portrait of <em>your</em> pet, leaning out of an ornate carved frame with their name in raised gold lettering across the top. Sits on a shelf, mantel or table, or hangs on a wall — indoors or out. Every piece is made to order from your photos.</p>
+        </div>
+      </div>
+
+      <ul class="spec rise">
+        <li><span>01</span> Made to order from your own photos</li>
+        <li><span>02</span> Name in gold on the frame</li>
+        <li><span>03</span> Sculpted and painted by hand</li>
+        <li><span>04</span> 3D, not a print — paws come right out over the frame</li>
+        <li><span>05</span> Shelf or wall</li>
+        <li><span>06</span> Weather-happy enough for a porch</li>
+      </ul>
+    </div>
+
+    <!-- Work I — Peggy -->
+    <article class="work wrap" aria-labelledby="work-peggy" style="margin-top:clamp(56px,8vw,110px)">
+      <div class="work-head rise">
+        <span class="work-num">Work I</span>
+        <h3 id="work-peggy">Peggy</h3>
+        <p>Black-and-white tuxedo cat, green eyes, paws hooked over the frame edge. Five views, indoors and out.</p>
+      </div>
+      <div class="plates plates-5">
+        <figure class="art rise">
+          <img src="../../assets/peggy-table.jpg" alt="Front view of Peggy’s 3D portrait frame on a table: a black-and-white tuxedo cat with green eyes leaning out of a carved frame with her name in gold" width="960" height="1200" loading="lazy">
+          <figcaption><b>Peggy</b> — commissioned portrait, hand-sculpted and hand-painted. Front view, on a table.</figcaption>
+        </figure>
+        <figure class="art rise" style="--d:100ms">
+          <img src="../../assets/peggy-angle.jpg" alt="Three-quarter view of Peggy’s portrait frame in warm lamplight, showing the depth of the sculpted paws over the frame" width="960" height="1200" loading="lazy">
+          <figcaption><b>Peggy</b> — three-quarter view, lamplight.</figcaption>
+        </figure>
+        <figure class="art rise">
+          <img src="../../assets/peggy-porch.jpg" alt="Peggy’s portrait frame standing on a porch bench next to a lantern and a jug of white daisies" width="960" height="1200" loading="lazy">
+          <figcaption><b>Peggy</b> — porch bench, lantern and daisies.</figcaption>
+        </figure>
+        <figure class="art rise" style="--d:100ms">
+          <img src="../../assets/peggy-wall.jpg" alt="Peggy’s portrait frame mounted on an ivy-covered garden wall" width="960" height="1200" loading="lazy">
+          <figcaption><b>Peggy</b> — mounted on an ivy wall.</figcaption>
+        </figure>
+        <figure class="art rise">
+          <img src="../../assets/peggy-railing.jpg" alt="Peggy’s portrait frame set on a wooden deck railing with a green garden behind it" width="960" height="1200" loading="lazy">
+          <figcaption><b>Peggy</b> — deck railing, garden behind.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- Work II — Perdita -->
+    <article class="work work-flip wrap" aria-labelledby="work-perdita">
+      <div class="work-head rise">
+        <span class="work-num">Work II</span>
+        <h3 id="work-perdita">Perdita</h3>
+        <p>Black Great Dane with a white chest, wearing her “Birthday Pup” bandana. Three views.</p>
+      </div>
+      <div class="plates plates-3">
+        <figure class="art rise">
+          <img src="../../assets/perdita-wall.jpg" alt="Perdita’s 3D portrait frame mounted on grey boards beneath a lantern: a black Great Dane with a white chest and a Birthday Pup bandana leaning out of a carved frame" width="960" height="1200" loading="lazy">
+          <figcaption><b>Perdita</b> — commissioned portrait, hand-sculpted and hand-painted. Mounted on grey boards, under a lantern.</figcaption>
+        </figure>
+        <figure class="art rise" style="--d:100ms">
+          <img src="../../assets/perdita-deck.jpg" alt="Perdita’s portrait frame standing on a deck with woods in the background" width="960" height="1200" loading="lazy">
+          <figcaption><b>Perdita</b> — on a deck, woods behind.</figcaption>
+        </figure>
+        <figure class="art rise">
+          <img src="../../assets/perdita-table.jpg" alt="Perdita’s portrait frame indoors in sunlight beside a houseplant" width="960" height="1200" loading="lazy">
+          <figcaption><b>Perdita</b> — indoors, sunlight and a houseplant.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- Work III — Pongo -->
+    <article class="work wrap" aria-labelledby="work-pongo">
+      <div class="work-head rise">
+        <span class="work-num">Work III</span>
+        <h3 id="work-pongo">Pongo</h3>
+        <p>Harlequin Great Dane, grey and black patches, red collar. Three views.</p>
+      </div>
+      <div class="plates plates-3">
+        <figure class="art rise">
+          <img src="../../assets/pongo-table.jpg" alt="Pongo’s 3D portrait frame indoors on a wooden surface: a harlequin Great Dane with grey and black patches and a red collar leaning out of a carved frame" width="960" height="1200" loading="lazy">
+          <figcaption><b>Pongo</b> — commissioned portrait, hand-sculpted and hand-painted. Indoors, on wood.</figcaption>
+        </figure>
+        <figure class="art rise" style="--d:100ms">
+          <img src="../../assets/pongo-railing.jpg" alt="Pongo’s portrait frame on a deck railing with hydrangeas blooming behind it" width="960" height="1200" loading="lazy">
+          <figcaption><b>Pongo</b> — deck railing, hydrangeas.</figcaption>
+        </figure>
+        <figure class="art rise">
+          <img src="../../assets/pongo-wall.jpg" alt="Pongo’s portrait frame mounted on blue-grey siding with ivy growing across it" width="960" height="1200" loading="lazy">
+          <figcaption><b>Pongo</b> — mounted on blue-grey siding with ivy.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <div class="wrap">
+      <div class="order rise">
+        <h3>How to commission</h3>
+        <div class="order-body">
+          <p>Email <a class="link" href="mailto:threefatbabies.official@gmail.com?subject=Custom%203D%20Pet%20Portrait%20Frame">threefatbabies.official@gmail.com</a> with a few clear photos of your pet and the name you want on the frame.</p>
+          <p style="margin-top:22px"><a class="link-arrow" href="mailto:threefatbabies.official@gmail.com?subject=Custom%203D%20Pet%20Portrait%20Frame">Start a commission <span aria-hidden="true">→</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TALES ============ -->
+  <section id="tales" class="rule-top" aria-labelledby="tales-title">
+    <div class="wrap">
+      <p class="eyebrow">Permanent collection</p>
+      <h2 id="tales-title" class="rise" style="font-size:clamp(2.1rem,5.6vw,4.4rem);max-width:16ch">Tales of Three Fat Babies</h2>
+    </div>
+
+    <article class="tale wrap" aria-labelledby="tale-pei" style="margin-top:clamp(48px,7vw,96px)">
+      <figure class="art rise">
+        <img src="../../assets/pei.jpg" alt="Pei, a six-year-old adopted dog, looking at the camera" width="855" height="1100" loading="lazy">
+        <figcaption><b>Pei</b> — the Queen, six years old.</figcaption>
+      </figure>
+      <div class="tale-body rise" style="--d:100ms">
+        <h3 id="tale-pei">Pei</h3>
+        <p class="tale-meta">6 yrs · The Queen · Expert Food Thief</p>
+        <p>I’m a six-year-old adopted girl who started my life in sunny Florida. Back then, I was a mama too—I had two litters of my own. But life was scary and full of unknowns, and I was so shy that Mama and Dad were really worried about me. Fast forward, and now I’m living my <em>queen</em> life!</p>
+        <p>After two years in Florida, I moved to Alabama with Mama, where I reunited with Dad. Mama spoils me rotten, and honestly, I only love her (sorry, not sorry). I’m an expert food thief and love hiking adventures with Mama, Dad, and my brother Moo. Life is paws-itively amazing!</p>
+      </div>
+    </article>
+
+    <article class="tale tale-alt wrap" aria-labelledby="tale-moo">
+      <figure class="art rise">
+        <img src="../../assets/moo.jpg" alt="Moo, a four-year-old dog with black-and-white cow spots" width="855" height="1100" loading="lazy">
+        <figcaption><b>Moo</b> — Moo Moo Cow, four years old.</figcaption>
+      </figure>
+      <div class="tale-body rise" style="--d:100ms">
+        <h3 id="tale-moo">Moo</h3>
+        <p class="tale-meta">4 yrs · Moo Moo Cow · Professional Nuisance</p>
+        <p>Hi, humans! I’m the chubbiest, cutest, and most <em>amazing</em> boy you’ll ever meet. I’m four years old now. Mama adopted me as a baby in Florida (same as my sisi), and she says she picked me because my cow spots are hilarious. So now she calls me Moo Moo Cow… ALL. THE. TIME.</p>
+        <p>I love <em>EVERYTHING</em>. I love chewing stuff, playing the dragging game, and most of all, annoying my sisters. Seriously, it’s my best talent! Sometimes my mischief gets Mama and Dad all mad, but honestly? Eh, I don’t care.</p>
+      </div>
+    </article>
+
+    <article class="tale wrap" aria-labelledby="tale-cata">
+      <figure class="art rise">
+        <img src="../../assets/cata.jpg" alt="Cata, a three-year-old cat and the only cat in the house" width="853" height="1100" loading="lazy">
+        <figcaption><b>Cata</b> — the only cat, three years old.</figcaption>
+      </figure>
+      <div class="tale-body rise" style="--d:100ms">
+        <h3 id="tale-cata">Cata</h3>
+        <p class="tale-meta">3 yrs · The Only Cat · Snuggly On Her Terms</p>
+        <p>Meow. I’m the <em>only</em> cat in the house, and I’m three years old. Life didn’t always look like this—I used to roam the streets near Dad’s old apartment. But one day, I saw Mama and Dad, and I <em>knew</em> they were my humans. And just like that, I found myself with a home!</p>
+        <p>Everything was new and strange at first. I had to share my space with a not-so-friendly sister dog and this huge, chunky, and kind of scary dog. Let’s just say we didn’t hit it off right away. But now? We all live together peacefully.</p>
+        <p>I’m snuggly (on my terms, of course) and love my life, but let’s be clear—don’t get <em>too</em> close unless I say so!</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ HUMANS ============ -->
+  <section id="humans" class="rule-top" aria-labelledby="humans-title">
+    <div class="wrap">
+      <p class="eyebrow">The humans</p>
+      <div class="humans-grid">
+        <figure class="art rise">
+          <img src="../../assets/humans.jpg" alt="Mama and Dad, the humans of Three Fat Babies, photographed together" width="1057" height="1100" loading="lazy">
+          <figcaption><b>Mama &amp; Dad</b> — Alabama, USA.</figcaption>
+        </figure>
+        <div class="humans-text">
+          <h2 id="humans-title" class="rise" style="font-size:clamp(2.1rem,5vw,3.6rem);margin-bottom:clamp(26px,4vw,44px)">Meet Our Humans</h2>
+
+          <div class="human rise" style="--d:80ms">
+            <h3>Dad</h3>
+            <p class="role">Unofficial photographer</p>
+            <p>Our dad is an unofficial photographer who’s pretty much a pro in our eyes. He’s always snapping the best shots of us looking fabulous. Want your human to take photos as amazing as ours? Please feel free to reach out to him through our email — and view the photos to see his incredible work and get inspired!</p>
+          </div>
+
+          <div class="human rise" style="--d:160ms">
+            <h3>Mama</h3>
+            <p class="role">Maker — and runs everything</p>
+            <p>As for our mama, well, she’s simply the most talented woman in the entire world. She created our website, runs our accounts, and handles all the household business like the superstar she is. We have absolutely <em>nothing</em> to complain about her. She’s perfect. End of story.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sheets">
+        <p class="sheets-label eyebrow rise" style="margin-bottom:0">Portfolio sheets</p>
+        <figure class="art rise">
+          <a href="../../assets/portfolio-1.jpg" target="_blank" rel="noopener">
+            <img src="../../assets/portfolio-1.jpg" alt="Portfolio sheet one: a printed contact sheet of Dad’s pet photographs" width="1003" height="1300" loading="lazy">
+          </a>
+          <figcaption><b>Sheet I</b> — photographs by Dad. Opens full size.</figcaption>
+        </figure>
+        <figure class="art rise" style="--d:100ms">
+          <a href="../../assets/portfolio-2.jpg" target="_blank" rel="noopener">
+            <img src="../../assets/portfolio-2.jpg" alt="Portfolio sheet two: a second printed contact sheet of Dad’s pet photographs" width="1003" height="1300" loading="lazy">
+          </a>
+          <figcaption><b>Sheet II</b> — photographs by Dad. Opens full size.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="rule-top" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <div class="contact-grid">
+        <div class="contact-main rise">
+          <h2 id="contact-title" class="lede" style="margin-bottom:clamp(24px,4vw,40px);max-width:20ch">Please contact us through email.</h2>
+          <a class="mail" href="mailto:threefatbabies.official@gmail.com">threefatbabies.official@gmail.com</a>
+        </div>
+        <div class="contact-side rise" style="--d:120ms">
+          <p>Follow along for new work, naps and general mischief.</p>
+          <p><a class="link-arrow" href="https://www.instagram.com/three_fat_babies?igsh=MTF0MXd1N2U2MjNmYw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <img src="../../assets/logo.png" alt="" width="40" height="40">
+      <span>Three Fat Babies — Pei, Moo &amp; Cata. Alabama, USA.</span>
+      <nav aria-label="Footer">
+        <a class="link" href="#works">Works</a>
+        <a class="link" href="#tales">Tales</a>
+        <a class="link" href="#humans">Humans</a>
+        <a class="link" href="mailto:threefatbabies.official@gmail.com">Email</a>
+        <a class="link" href="https://www.instagram.com/three_fat_babies?igsh=MTF0MXd1N2U2MjNmYw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+      <span>© <span id="year">2026</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---- year ---- */
+  var y = document.getElementById("year");
+  if (y) { y.textContent = new Date().getFullYear(); }
+
+  /* ---- mobile menu ---- */
+  var burger = document.getElementById("burger");
+  var panel = document.getElementById("mobile-nav");
+
+  function setMenu(open) {
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+    panel.classList.toggle("is-open", open);
+    if (open) { panel.removeAttribute("hidden"); } else { panel.setAttribute("hidden", ""); }
+  }
+
+  if (burger && panel) {
+    burger.addEventListener("click", function () {
+      setMenu(burger.getAttribute("aria-expanded") !== "true");
+    });
+
+    panel.addEventListener("click", function (e) {
+      if (e.target.closest("a")) { setMenu(false); }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && burger.getAttribute("aria-expanded") === "true") {
+        setMenu(false);
+        burger.focus();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 860) { setMenu(false); }
+    });
+  }
+
+  /* ---- header hairline once scrolled (IntersectionObserver, no scroll listener) ---- */
+  var header = document.querySelector(".site-header");
+  var sentinel = document.getElementById("top");
+  if (header && "IntersectionObserver" in window) {
+    var probe = document.createElement("div");
+    probe.setAttribute("aria-hidden", "true");
+    probe.style.cssText = "position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none";
+    document.body.prepend(probe);
+    new IntersectionObserver(function (entries) {
+      header.classList.toggle("is-stuck", !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(probe);
+  }
+
+  /* ---- slow reveal on scroll ---- */
+  var items = document.querySelectorAll(".rise");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function (el) { el.classList.add("in"); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
