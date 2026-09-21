@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Three Fat Babies</title>
+<meta name="description" content="Get in touch about a portrait for your pet, in memory or otherwise, or just say hello.">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="ribbon">
+  <b>SECRET WORD</b> — send &ldquo;Moo Moo Cow&rdquo; to
+  <a href="mailto:threefatbabies.official@gmail.com?subject=Moo%20Moo%20Cow">threefatbabies.official@gmail.com</a> for two free handmade goodies.
+</div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="../index.html"><img src="../assets/logo.png" alt=""><span>Three Fat Babies</span></a>
+    <nav class="links" id="links"><a href="../index.html">Home</a><a href="../portraits/index.html">Portraits</a><a href="../babies/index.html">The Babies</a><a href="../contact/index.html" aria-current="page">Contact</a></nav>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+<section class="contact">
+  <div class="wrap rv" style="padding:clamp(20px,4vw,40px) 0">
+    <div class="kicker" style="color:#E6BE8A">Get in touch</div>
+    <h1>Come say <em>hello</em>.</h1>
+    <p>Commissions, questions, or just to show us your pet &mdash; it all arrives in the same inbox,
+    and Mama reads every one. If you are writing about one you have lost, take your time. There is
+    no hurry at this end.</p>
+    <a class="mailto" href="mailto:threefatbabies.official@gmail.com">threefatbabies.official@gmail.com</a>
+    <div><a class="btn" href="https://www.instagram.com/three_fat_babies?igsh=MTF0MXd1N2U2MjNmYw%3D%3D&utm_source=qr" target="_blank" rel="noopener">@three_fat_babies &#8599;</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head rv">
+    <span class="sec-num">01</span>
+    <h2>Commissioning a <em>portrait</em></h2>
+    <p>Everything we need in one email.</p>
+  </div>
+  <div class="specs" style="margin-top:0;padding-top:0;border-top:0">
+    <div class="spec rv"><div class="n">I</div><h4>Send photos</h4><p>A few pictures from different angles. Daylight helps, but send whatever you have &mdash; we will work with it.</p></div>
+    <div class="spec rv"><div class="n">II</div><h4>Tell us the name</h4><p>Exactly as you want it lettered in gold across the top of the frame.</p></div>
+    <div class="spec rv"><div class="n">III</div><h4>Mention the details</h4><p>A favourite collar, a bandana, a marking you want to be sure we get right.</p></div>
+    <div class="spec rv"><div class="n">IV</div><h4>We reply</h4><p>Mama comes back to you with everything else. Ask her anything.</p></div>
+  </div>
+  <div class="commission rv">
+    <h3>Commission a portrait</h3>
+    <p>Email a few good photographs of your pet along with the name you would like on the frame.
+    Mama will reply with everything else.</p>
+    <div style="margin-top:26px"><a class="btn solid" href="mailto:threefatbabies.official@gmail.com?subject=Custom%20pet%20portrait%20frame">Email us</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <img src="../assets/logo.png" alt="">
+    <nav class="foot-nav"><a href="../index.html">Home</a><a href="../portraits/index.html">Portraits</a><a href="../babies/index.html">The Babies</a><a href="../contact/index.html">Contact</a></nav>
+    <p>Three Fat Babies — Pei, Moo &amp; Cata</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),l=document.getElementById('links');
+  function close(){l.classList.remove('open');b.textContent='Menu';b.setAttribute('aria-expanded','false');}
+  b.addEventListener('click',function(){
+    var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'Close':'Menu';});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  window.addEventListener('resize',function(){if(window.innerWidth>860)close();});
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){[].forEach.call(els,function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},
+    {rootMargin:'0px 0px -6% 0px',threshold:.06});
+  [].forEach.call(els,function(el,i){el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+})();
+</script>
+</body>
+</html>

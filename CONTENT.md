@@ -65,7 +65,11 @@ But now? We all live together peacefully.
 I’m snuggly (on my terms, of course) and love my life, but let’s be clear—don’t get *too* close
 unless I say so!
 
-## Meet Our Humans — `assets/humans.jpg`
+## Meet Our Humans — RETIRED (not on the site)
+
+> Removed at the owner's request. Kept here for reference only; do not add it back
+> unless asked. Photos live in `../archive/_assets/`.
+
 
 **Dad — Unofficial Photographer.** Our dad is an unofficial photographer who’s pretty much a pro
 in our eyes. He’s always snapping the best shots of us looking fabulous. Want your human to take
@@ -79,27 +83,64 @@ She’s perfect. End of story.
 
 Portfolio sheets: `assets/portfolio-1.jpg`, `assets/portfolio-2.jpg` (link to full size).
 
-## PRODUCT — Custom 3D Pet Portrait Frames  ← the current product line
+## PRODUCT — Custom Pet Portrait Frames  ← the current product line
 
 > The old Café Crust magnets are **retired**. Do not feature them. Their photos remain in
 > `../archive/_assets/` only.
 
-Hand-sculpted, hand-painted portrait of *your* pet, leaning out of an ornate carved frame with
-their name in raised gold lettering across the top. Sits on a shelf, mantel or table, or hangs
-on a wall — indoors or out. Every piece is made to order from your photos.
+### What it is
 
-**Selling points:** made to order from your own photos · name in gold on the frame · sculpted
-and painted by hand · 3D, not a print — paws come right out over the frame · shelf or wall ·
-weather-happy enough for a porch.
+A three-dimensional portrait of a pet leaning out of an ornate frame, with their name in gold
+lettering across the top. Each piece is **painted by hand** and **customised to one animal** —
+markings, collar, bandana and all — worked up from photos the customer sends. It sits on a shelf,
+mantel or table, or hangs on a wall, indoors or out.
 
-**How to order:** email threefatbabies.official@gmail.com with a few clear photos of your pet
-and the name you want on the frame.
+### What it is FOR — the heart of the site
+
+**These are made most often as memorials.** The point is not an ornament. It is that a photograph
+keeps a pet flat and behind glass, and this does not: they lean out into the room, at the height
+they always were, and the house feels less empty. Someone who has just lost a dog or a cat is the
+person this site is really speaking to.
+
+**We also make them for pets who are still here**, and that must stay clearly and warmly true on
+the page — plenty of people simply want their dog on the mantel while the dog is asleep under the
+table. Never imply the product is only for pets who have died.
+
+### Tone rules for memorial copy — important
+
+- ✅ Warm, plain, short sentences. Concrete images ("at the height they always were").
+- ❌ No grief clichés: no "rainbow bridge", no "crossed over", no "forever in our hearts",
+  no "furever". No exclamation marks anywhere near this subject.
+- ❌ Never pressure, never urgency, never "order now". Grief is not a conversion funnel.
+- ❌ Do not be maudlin or overwrought. Understatement does the work.
+- The playful Three Fat Babies voice still belongs on the Babies page and the secret word.
+  It does not belong in the product copy.
+
+### Accuracy rules — read before writing any product copy
+
+- ✅ Say: *hand-painted*, *painted by hand*, *customised / made to order for your pet*,
+  *their name on the frame*, *three-dimensional, not a print*, *shelf or wall*.
+- ❌ Never say: *hand-sculpted*, *sculpted*, *carved*, *wood*, *wooden*, *resin*, or any other
+  claim about what the piece is made of. We do not state the material.
+  (Describing a *table* in a photo as wooden is fine — that is the furniture, not the product.)
+- ❌ Never invent prices, dimensions, weights, turnaround times or shipping terms.
+
+**Selling points:** customised to your own pet, from your photos · painted by hand, one at a
+time · their name across the top of the frame · three-dimensional — the paws come out over the
+front edge · stands on a shelf or hangs on a wall, indoors or on a covered porch.
+
+**How to order:** email threefatbabies.official@gmail.com with a few clear photos of the pet
+and the name to letter on the frame.
 
 ### Commissions to show
 
+Peggy was a memorial commission. Perdita and Pongo are living dogs. Mark Peggy gently on the
+site ("In memory · January 2026") and do not dramatise it.
+
+
 | Pet | What it is | Images |
 |---|---|---|
-| **Peggy** | Black-and-white tuxedo cat, green eyes, paws over the frame edge | `assets/peggy-table.jpg` (front, on a table), `assets/peggy-angle.jpg` (three-quarter, lamplight), `assets/peggy-porch.jpg` (porch bench, lantern + daisies), `assets/peggy-wall.jpg` (mounted on an ivy wall), `assets/peggy-railing.jpg` (deck railing, garden behind) |
+| **Peggy** *(memorial — she passed away in January 2026)* | Black-and-white tuxedo cat, green eyes, paws over the frame edge | `assets/peggy-table.jpg` (front, on a table), `assets/peggy-angle.jpg` (three-quarter, lamplight), `assets/peggy-porch.jpg` (porch bench, lantern + daisies), `assets/peggy-wall.jpg` (mounted on an ivy wall), `assets/peggy-railing.jpg` (deck railing, garden behind) |
 | **Perdita** | Black Great Dane with a white chest and a “Birthday Pup” bandana | `assets/perdita-wall.jpg` (mounted on grey boards under a lantern), `assets/perdita-deck.jpg` (on a deck, woods behind), `assets/perdita-table.jpg` (indoors, sunlight and a houseplant) |
 | **Pongo** | Harlequin Great Dane, grey and black patches, red collar | `assets/pongo-table.jpg` (indoors on wood), `assets/pongo-railing.jpg` (deck railing, hydrangeas), `assets/pongo-wall.jpg` (mounted on blue-grey siding with ivy) |
 
