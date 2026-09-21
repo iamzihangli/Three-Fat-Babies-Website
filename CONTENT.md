@@ -162,17 +162,28 @@ Owner's account, first person ("Sharon and I"). Keep the facts exactly; polish o
 | | |
 |---|---|
 | Price | **$299, paid once.** Not a subscription; never renews. Avoid the word "subscribe". |
-| Launch offer | **50% off ($149.50) for one month** from launch day |
+| Launch offer | **The first 10 members during launch month pay half ($149.50).** Not everyone in the month — the first ten. |
+| Capacity | **Maximum 30 orders per month.** Say so on the page; it is true and it is the reason. |
+| Who the member is | **The pet.** The payer is called **"My Human"**. The membership follows the pet, is **not transferable** to another animal, and does not end: "your pet will always have a place in our company" — a forever home. |
+| Only way to buy | Yes. There is no frame-only price. |
 | Launch date | **Not set.** Site says "launching soon — email us to hear first" |
-| Includes | One frame-style portrait, customised and hand-painted |
+| Includes | One frame-style portrait, customised and hand-painted. One membership = one pet. |
 | Warranty | **Lifetime.** If the piece is broken or damaged we repair or replace it. **Member pays shipping both ways.** |
 | Future products | Members get a discount on new products (e.g. Christmas tree decorations). **No percentage stated yet.** |
 | How to buy | Email first. No checkout link. |
 
 **Tone:** the launch price is stated plainly, once per block. No countdown timers, no "hurry",
-no "limited time", no "don't miss". Many buyers are grieving; see the memorial tone rules above.
+no "limited time", no "don't miss". The ten half-price places and the thirty-a-month
+cap are real limits: state them as facts, with the reason, and leave it there. Many buyers are grieving; see the memorial tone rules above.
 
 Thinking, risks and open questions are in `../business plan.md` (private, outside this repo).
+
+### INTERNAL — how it is made (not on the site unless the owner says so)
+
+Modelled from the photos (~2 h) → 3D printed (under 10 h, machine time) → primed (1 h) →
+painted by hand (3 h) → finishing coat (1 h). About one week from receiving photos.
+This is why "hand-painted" and "customised" are accurate and "hand-sculpted" is not.
+Do not publish the process or the one-week lead time without the owner's say-so.
 
 ## Contact
 
